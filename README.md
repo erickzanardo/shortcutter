@@ -1,6 +1,6 @@
 ## Shotcutter
 
-Shortcutter is a simple bash script used to create shortcuts on you terminal. It is very simple to use se the examples below.
+Shortcutter is a simple bash script used to create shortcuts on you terminal. It is very simple to use see the examples below.
 
 Use `add-shortcut [shortcut-name]` to create a shortcut of the current folder, for example
 
