@@ -32,3 +32,5 @@ for dir in "${SHORTCUTTER_DIRS[@]}"; do
   source "$SHORTCUTTER_DIR$dir";
 done
 ```
+
+Also you need to create a folder named `.shortcutters` on your home.
