@@ -1,0 +1,39 @@
+#!/bin/bash
+
+function add-shortcut {
+  if [ "$1" = "" ]
+  then
+    echo "You must specify the shortcut name"
+  else  
+    CURRENT_PATH=`pwd`
+    SHORTCUT_NAME="$1"
+
+    FILE_NAME="$HOME/.shortcutters/$SHORTCUT_NAME"
+    if [ -a $FILE_NAME ]
+    then
+      echo "Shortcutter already exists"
+    else
+      touch $FILE_NAME
+      echo "alias $SHORTCUT_NAME='cd $CURRENT_PATH'" > $FILE_NAME
+      source $FILE_NAME
+    fi
+  fi
+}
+
+function remove-shortcut {
+  if [ "$1" = "" ]
+  then
+    echo "You must specify the shortcut name"
+  else  
+    SHORTCUT_NAME="$1"
+
+    FILE_NAME="$HOME/.shortcutters/$SHORTCUT_NAME"
+
+    if [ -a $FILE_NAME ]
+    then
+      rm $FILE_NAME
+    else
+      echo "Shortcutter doesn't exists"
+    fi
+  fi
+}
